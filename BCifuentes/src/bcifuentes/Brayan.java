@@ -35,6 +35,7 @@ public class Brayan extends javax.swing.JFrame {
         lbl_Nombre = new javax.swing.JLabel();
         lbl_Apellido = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
+        lbl_unir = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenu2 = new javax.swing.JMenu();
@@ -52,7 +53,12 @@ public class Brayan extends javax.swing.JFrame {
             }
         });
 
-        jButton2.setText("Vaciar variables");
+        jButton2.setText("Unir variables");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         jMenu1.setText("File");
         jMenuBar1.add(jMenu1);
@@ -90,7 +96,8 @@ public class Brayan extends javax.swing.JFrame {
                                 .addComponent(jButton1)
                                 .addGap(18, 18, 18)
                                 .addComponent(jButton2))
-                            .addComponent(lbl_Apellido))))
+                            .addComponent(lbl_Apellido)
+                            .addComponent(lbl_unir))))
                 .addContainerGap(266, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -112,7 +119,9 @@ public class Brayan extends javax.swing.JFrame {
                 .addComponent(lbl_Nombre)
                 .addGap(18, 18, 18)
                 .addComponent(lbl_Apellido)
-                .addContainerGap(125, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 81, Short.MAX_VALUE)
+                .addComponent(lbl_unir)
+                .addGap(44, 44, 44))
         );
 
         pack();
@@ -128,6 +137,14 @@ public class Brayan extends javax.swing.JFrame {
         lbl_Nombre.setText(Nombre);
         lbl_Apellido.setText(Apellido);
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        String Nombre, Apellido;
+        
+        Nombre=txt_nombre.getText();
+        Apellido=txt_apellido.getText();
+        lbl_unir.setText(Nombre+" "+Apellido);
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -174,6 +191,7 @@ public class Brayan extends javax.swing.JFrame {
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JLabel lbl_Apellido;
     private javax.swing.JLabel lbl_Nombre;
+    private javax.swing.JLabel lbl_unir;
     private javax.swing.JTextField txt_apellido;
     private javax.swing.JTextField txt_nombre;
     // End of variables declaration//GEN-END:variables
