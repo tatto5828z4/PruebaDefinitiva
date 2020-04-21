@@ -32,6 +32,8 @@ public class Brayan extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         txt_apellido = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
+        lbl_Nombre = new javax.swing.JLabel();
+        lbl_Apellido = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenu2 = new javax.swing.JMenu();
@@ -43,6 +45,11 @@ public class Brayan extends javax.swing.JFrame {
         jLabel2.setText("APELLIDO");
 
         jButton1.setText("INGRESAR");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jMenu1.setText("File");
         jMenuBar1.add(jMenu1);
@@ -63,16 +70,22 @@ public class Brayan extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel1)
-                                .addGap(18, 18, 18)
-                                .addComponent(jLabel2))
+                                .addGap(84, 84, 84))
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(txt_nombre, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txt_apellido))))
+                                .addComponent(txt_nombre)
+                                .addGap(24, 24, 24)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(5, 5, 5)
+                                .addComponent(jLabel2))
+                            .addComponent(txt_apellido, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(30, 30, 30)
-                        .addComponent(jButton1)))
-                .addContainerGap(282, Short.MAX_VALUE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lbl_Nombre)
+                            .addComponent(jButton1)
+                            .addComponent(lbl_Apellido))))
+                .addContainerGap(266, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -87,11 +100,26 @@ public class Brayan extends javax.swing.JFrame {
                     .addComponent(txt_apellido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(jButton1)
-                .addContainerGap(179, Short.MAX_VALUE))
+                .addGap(36, 36, 36)
+                .addComponent(lbl_Nombre)
+                .addGap(18, 18, 18)
+                .addComponent(lbl_Apellido)
+                .addContainerGap(125, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        
+        String Nombre, Apellido;
+        
+        Nombre=txt_nombre.getText();
+        Apellido=txt_apellido.getText();
+        
+        lbl_Nombre.setText(Nombre);
+        lbl_Apellido.setText(Apellido);
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -135,6 +163,8 @@ public class Brayan extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JLabel lbl_Apellido;
+    private javax.swing.JLabel lbl_Nombre;
     private javax.swing.JTextField txt_apellido;
     private javax.swing.JTextField txt_nombre;
     // End of variables declaration//GEN-END:variables
